@@ -82,6 +82,16 @@ Core.util = (function($){
         return false;
     }
 
+    function _isFunction(variable){
+        if(_isValid(variable)){
+            if(typeof variable == "function"){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     function _loadScript(url,callback){
         var head = document.getElementsByTagName('head')[0];
         var script = document.createElement('script');
@@ -124,6 +134,29 @@ Core.util = (function($){
         return (!_isIE() && !_isFirefox() && !_isChrome());
     }
 
+    function _replace(stringSource,charStart,charEnd,arrayReplace){
+		var pos = 0;
+		var newString = stringSource.substr(0);
+
+		if(arrayReplace.length > 0){
+			arrayReplace.forEach(function(item){
+				var stringReplace = charStart + pos + charEnd;
+				newString = newString.replace(stringReplace,item);
+				pos++;
+			});
+		}
+
+		return newString;
+    }
+
+    function _replaceFormat(stringSource,arrayReplace){
+        var charStart = "{";
+		var charEnd = "}";
+		var pos = 0;
+		var newString = _replace(stringSource,charStart,charEnd,arrayReplace);
+		return newString;
+    }
+
     return{
         isDeploy: function(){
             return _isDeploy();
@@ -143,6 +176,9 @@ Core.util = (function($){
         isEmpty: function(variable){
             return _isEmpty(variable);
         },
+        isFunction: function(variable){
+            return _isFunction(variable);
+        },
         loadScript: function(url,callback){
             _loadScript(url,callback);
         },
@@ -160,6 +196,12 @@ Core.util = (function($){
         },
         isEdge: function(){
             return _isEdge();
+        },
+        replace: function(stringSource,charStart,charEnd,arrayReplace){
+            return _replace(stringSource,charStart,charEnd,arrayReplace);
+        },
+        replaceFormat: function(stringSource,arrayReplace){
+            return _replaceFormat(stringSource,arrayReplace);
         }
     }
 })(jQuery);
@@ -496,7 +538,7 @@ Core.date = (function(){
 
 
 Core.ajax = (function($){
-    $.support.cors = true; // Compatibilidad IE
+    $.support.cors = true;
     
     function _ws(url,request,callback){
         var resp;
@@ -680,14 +722,15 @@ Core.modal = (function($){
         footer.append("<button class='btn btn-sm btn-danger btn-cancel'>Cancel</button>");
 
         footer.find('.btn-ok').on('click',function(){
-            if(Core.util.isValid(callback)){
+            if(Core.util.isFunction(callback)){
                 callback(true);
             }
+            
             modal.close();
         });
 
         footer.find('.btn-cancel').on('click',function(){
-            if(Core.util.isValid(callback)){
+            if(Core.util.isFunction(callback)){
                 callback(false);
             }
             modal.close();
@@ -838,6 +881,7 @@ Core.message = (function($){
 
         var modal = Core.modal.dialog({'type':'modal-dialog-sm','defaultClose': false,'title': title},callback);
         var body = modal.find('.panel-body');
+        body.css("padding-bottom","30px");
         body.append("<p>"+message+"</p>");
         var footer = modal.find('.panel-footer');
         footer.find('.btn-cancel').remove();
@@ -850,6 +894,7 @@ Core.message = (function($){
 
         var modal = Core.modal.dialog({'type':'modal-dialog-sm','defaultClose': false,'title': title},callback);
         var body = modal.find('.panel-body');
+        body.css("padding-bottom","30px");
         body.append("<p>"+message+"</p>");
     }
 
