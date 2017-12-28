@@ -3,7 +3,7 @@
  * Copyright 2017 @icalapuja
  * Licensed under MIT (https://github.com/icalapuja/css/core)
  */
-@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans|Karla|Lato:100|Lora|Rubik|Work+Sans");
+@import url("https://fonts.googleapis.com/css?family=Jaldi|Metrophobic|Ruluko");
 html, body {
   display: block;
   width: 100%;
@@ -12,11 +12,11 @@ html, body {
   font-size: 14px; }
 
 * {
-  font-family: 'Karla', sans-serif;
   line-height: 1.2rem;
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Ruluko', Helvetica, sans-serif, 'verdana'; }
 
 header, main, footer, nav, article, section,
 h1, h2, h3, h4, h5, h6 {
@@ -352,11 +352,9 @@ fieldset {
   width: 100%;
   border-collapse: collapse; }
   .table th {
-    background-color: #f8f9fa;
     border: solid 1px #868e96;
     text-align: center;
-    padding: 5px;
-    font-weight: normal; }
+    padding: 5px; }
   .table td {
     border: solid 1px #868e96;
     text-align: center;
@@ -372,7 +370,7 @@ fieldset {
   vertical-align: middle;
   height: 30px;
   min-width: 30px;
-  padding: 5px;
+  padding: 2px 6px;
   background-color: #FFF;
   border: solid 1px lightgray;
   box-shadow: 1px 1px 5px lightgray;
@@ -380,7 +378,6 @@ fieldset {
   display: block;
   width: 100%;
   position: relative;
-  padding: 4px;
   box-shadow: inset 0 1px 3px lightgray;
   text-transform: uppercase; }
   .form-control[readonly] {
@@ -441,7 +438,7 @@ textarea.form-control {
   vertical-align: middle;
   height: 30px;
   min-width: 30px;
-  padding: 5px;
+  padding: 2px 6px;
   background-color: #FFF;
   border: solid 1px lightgray;
   box-shadow: 1px 1px 5px lightgray;
@@ -504,7 +501,7 @@ textarea.form-control {
   display: none;
   height: 100%;
   background: #414C63;
-  filter: alpha(opacity=90);
+  filter: alpha(opacity=95);
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0px;
@@ -524,17 +521,19 @@ textarea.form-control {
   .modal .modal-dialog-sm {
     width: 300px; }
   .modal .close {
-    color: white;
-    font-size: 30px; }
+    color: #f8f9fa;
+    font-size: 40px; }
 
 .message-bar-top {
   position: fixed;
   z-index: 100;
-  top: 0px; }
+  top: 0px;
+  padding: 0px 10px; }
 .message-bar-bottom {
   position: fixed;
   z-index: 100;
-  bottom: 0px; }
+  bottom: 0px;
+  padding: 0px 10px; }
 
 .text-left {
   text-align: left; }
@@ -545,34 +544,36 @@ textarea.form-control {
 
 /* end components */
 .bg-primary {
-  background-color: #428BBF;
+  background-color: #FF9F1C;
   color: #FFF; }
 
 .text-primary {
-  color: #428BBF; }
+  color: #FF9F1C; }
 
 .btn-primary {
-  background-color: #428BBF;
+  background-color: #FF9F1C;
   color: #FFF;
   border: none; }
 
 .border-primary {
-  border: solid 1px #428BBF; }
+  border: solid 1px #FF9F1C; }
 
 .alert-primary {
-  background-color: #428BBF;
+  background-color: #FF9F1C;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-primary {
-  background-color: #428BBF;
+  background-color: #FF9F1C;
   color: #FFF;
   position: fixed;
   width: 100%;
@@ -601,13 +602,15 @@ textarea.form-control {
   background-color: #868e96;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-secondary {
   background-color: #868e96;
@@ -639,13 +642,15 @@ textarea.form-control {
   background-color: #5cb85c;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-success {
   background-color: #5cb85c;
@@ -677,13 +682,15 @@ textarea.form-control {
   background-color: #d9534f;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-danger {
   background-color: #d9534f;
@@ -698,14 +705,14 @@ textarea.form-control {
 
 .bg-warning {
   background-color: #ffc107;
-  color: #414C63; }
+  color: #FFF; }
 
 .text-warning {
   color: #ffc107; }
 
 .btn-warning {
   background-color: #ffc107;
-  color: #414C63;
+  color: #FFF;
   border: none; }
 
 .border-warning {
@@ -713,19 +720,21 @@ textarea.form-control {
 
 .alert-warning {
   background-color: #ffc107;
-  color: #414C63;
+  color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-warning {
   background-color: #ffc107;
-  color: #414C63;
+  color: #FFF;
   position: fixed;
   width: 100%;
   padding: 10px;
@@ -735,34 +744,36 @@ textarea.form-control {
   z-index: 100; }
 
 .bg-info {
-  background-color: #17a2b8;
+  background-color: #408c99;
   color: #FFF; }
 
 .text-info {
-  color: #17a2b8; }
+  color: #408c99; }
 
 .btn-info {
-  background-color: #17a2b8;
+  background-color: #408c99;
   color: #FFF;
   border: none; }
 
 .border-info {
-  border: solid 1px #17a2b8; }
+  border: solid 1px #408c99; }
 
 .alert-info {
-  background-color: #17a2b8;
+  background-color: #408c99;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-info {
-  background-color: #17a2b8;
+  background-color: #408c99;
   color: #FFF;
   position: fixed;
   width: 100%;
@@ -791,13 +802,15 @@ textarea.form-control {
   background-color: #f8f9fa;
   color: #414C63;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-light {
   background-color: #f8f9fa;
@@ -829,13 +842,15 @@ textarea.form-control {
   background-color: #414C63;
   color: #FFF;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-dark {
   background-color: #414C63;
@@ -867,13 +882,15 @@ textarea.form-control {
   background-color: #FFF;
   color: #414C63;
   display: block;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 30px;
   border-radius: 5px;
   max-width: 400px;
   text-align: justify;
-  font-family: Verdana;
-  box-shadow: 2px 2px 2px lightgray; }
+  font-family: verdana;
+  box-shadow: 2px 2px 2px lightgray;
+  position: relative;
+  width: 100%;
+  margin: 4px 0px; }
 
 .snackbar-default {
   background-color: #FFF;

@@ -3,21 +3,24 @@
  * Copyright 2017 @icalapuja
  * Licensed under MIT (https://github.com/icalapuja/css/core)
  */
+ @import url('https://fonts.googleapis.com/css?family=Jaldi|Metrophobic|Ruluko');
 
 // declare section
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Karla|Lato:100|Lora|Rubik|Work+Sans');
-
 $xs-device: 0px;
 $sm-device: 600px;
 $md-device: 1000px;
 $lg-device: 1400px;
 
-$color-primary: #428BBF;
+// $color-primary: #428BBF;
+// $color-primary: #F5751A;
+// $color-primary: #F7560D;
+// $color-primary: #F83801;
+$color-primary: #FF9F1C;
 $color-secondary: #868e96;
 $color-success:#5cb85c;
 $color-danger:#d9534f;
 $color-warning:#ffc107;
-$color-info:#17a2b8;
+$color-info:#408c99;
 $color-light: #f8f9fa;
 $color-dark: #414C63;
 $color-default: #FFF;
@@ -55,7 +58,7 @@ $color-disabled: #EAEEEC;
 	vertical-align: middle;
 	height: 30px;
 	min-width: 30px;
-	padding: 5px;
+	padding: 2px 6px;
 	background-color: $color-default;
 	border: solid 1px $color-control;
 	box-shadow: 1px 1px 5px $color-control;
@@ -71,11 +74,14 @@ html,body{
 }
 
 *{
-	font-family: 'Karla', sans-serif;
 	line-height: 1.2rem;
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+
+	// font-family: 'Metrophobic', sans-serif;
+	// font-family: 'Jaldi', sans-serif;
+	font-family: 'Ruluko', Helvetica, sans-serif, 'verdana';
 }
 
 header,main,footer,nav,article,section,
@@ -155,11 +161,10 @@ fieldset{
 	border-collapse: collapse;
 
 	th{
-		background-color: $color-light;
 		border: solid 1px $color-secondary;
 		text-align: center;
 		padding: 5px;
-		font-weight: normal;
+		// font-family: Arial, Helvetica, sans-serif;
 	}
 
 	td{
@@ -176,7 +181,7 @@ fieldset{
 
 	&-control{
 		@include mixin_control();
-		@include mixin_box_content_sm();
+		@include mixin_box();
 	    box-shadow: inset 0 1px 3px $color-control;
 		text-transform: uppercase;
 
@@ -331,7 +336,7 @@ textarea.form-control{
 	display: none;
 	height: 100%;
 	background: $color-dark;
-	filter:alpha(opacity=90);
+	filter:alpha(opacity=95);
 	background-color: rgba(0,0,0,0.5);
 	position: fixed;
 	top: 0px;
@@ -356,8 +361,8 @@ textarea.form-control{
 	}
 
 	.close{
-		color: white;
-		font-size: 30px;
+		color: $color-light;
+		font-size: 40px;
 	}
 }
 
@@ -366,12 +371,14 @@ textarea.form-control{
 		position: fixed;
 		z-index: 100;
 		top: 0px;
+		padding: 0px 10px;
 	}
 
 	&#{-bottom}{
 		position: fixed;
 		z-index: 100;
 		bottom: 0px;
+		padding: 0px 10px;
 	}
 }
 
@@ -395,7 +402,7 @@ textarea.form-control{
 					(secondary,$color-secondary,$color-default),
 					(success,$color-success,$color-default),
 					(danger,$color-danger,$color-default),
-					(warning,$color-warning,$color-dark),
+					(warning,$color-warning,$color-default),
 					(info,$color-info,$color-default),
 					(light,$color-light,$color-dark),
 					(dark,$color-dark,$color-default),
@@ -424,13 +431,15 @@ textarea.form-control{
 		background-color: $color;
 		color: $text;
 		display: block;
-		padding: 10px;
-		margin: 5px;
+		padding: 10px 30px;
 		border-radius: 5px;
 		max-width: 400px;
 		text-align: justify;
-		font-family: Verdana;
+		font-family: verdana;
 		box-shadow: 2px 2px 2px $color-control;
+		position: relative;
+		width: 100%;
+		margin: 4px 0px;
 	}
 
 	.snackbar-#{$tipo}{
