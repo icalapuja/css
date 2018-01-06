@@ -104,6 +104,10 @@ fieldset{
 	flex-direction: row;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+
+	&:first-child{
+		clear: both;
+	}
 }
 
 .col-xs-12,.col-xs-11,.col-xs-10,.col-xs-9,.col-xs-8,.col-xs-7,.col-xs-6,.col-xs-5,.col-xs-4,.col-xs-3,.col-xs-2,.col-xs-1
@@ -147,6 +151,10 @@ fieldset{
 @media(min-width: $lg-device){
 	@include mixin_col_device(lg);
 }
+
+div:first-child{
+	clear: left;
+}
 // end grid system
 
 
@@ -182,7 +190,7 @@ fieldset{
 	&-control{
 		@include mixin_control();
 		@include mixin_box();
-	    box-shadow: inset 0 1px 3px $color-control;
+		box-shadow: inset 0 1px 3px $color-control;
 		text-transform: uppercase;
 
 		&[readonly]{
@@ -294,19 +302,19 @@ textarea.form-control{
 // end form
 
 
-/* components */
+// components
 .close{
- 	position: absolute;
- 	right: 5px;
- 	top: 5px;
+		position: absolute;
+		right: 5px;
+		top: 5px;
 	padding: 0px 5px;
 	font-size: 22px;
 
- 	&:hover{
- 		cursor: pointer;
- 		font-weight: bold;
- 		color: $color-dark;
- 	}
+		&:hover{
+			cursor: pointer;
+			font-weight: bold;
+			color: $color-dark;
+		}
 }
 
 .panel{
@@ -395,7 +403,7 @@ textarea.form-control{
 	}
 }
 
-/* end components */
+// end components
 
 // colors
 @each $tipo,$color,$text in (primary,$color-primary,$color-default),
@@ -421,6 +429,17 @@ textarea.form-control{
 		background-color: $color;
 		color: $text;
 		border: none;
+
+		&[readonly]{
+			background-color: $color-disabled;
+			color: $color-dark;
+		}
+
+		&[disabled]{
+			background-color: $color-disabled;
+			color: $color-dark;
+			cursor: no-drop;
+		}
 	}
 
 	.border-#{$tipo}{
@@ -454,5 +473,4 @@ textarea.form-control{
 		z-index: 100;
 	}
 }
-// end colors
-
+// end colors		

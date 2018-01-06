@@ -37,6 +37,8 @@ fieldset {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap; }
+  .row:first-child {
+    clear: both; }
 
 .col-xs-12, .col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1
 , .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1
@@ -342,6 +344,9 @@ fieldset {
 
   .col-lg-1 {
     width: 8.3333333333%; } }
+div:first-child {
+  clear: left; }
+
 .table-responsive {
   display: block;
   width: 100%;
@@ -456,7 +461,6 @@ textarea.form-control {
   .btn:hover {
     opacity: 0.7; }
 
-/* components */
 .close {
   position: absolute;
   right: 5px;
@@ -542,7 +546,6 @@ textarea.form-control {
 .text-center {
   text-align: center; }
 
-/* end components */
 .bg-primary {
   background-color: #FF9F1C;
   color: #FFF; }
@@ -554,6 +557,13 @@ textarea.form-control {
   background-color: #FF9F1C;
   color: #FFF;
   border: none; }
+  .btn-primary[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-primary[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-primary {
   border: solid 1px #FF9F1C; }
@@ -594,6 +604,13 @@ textarea.form-control {
   background-color: #868e96;
   color: #FFF;
   border: none; }
+  .btn-secondary[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-secondary[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-secondary {
   border: solid 1px #868e96; }
@@ -634,6 +651,13 @@ textarea.form-control {
   background-color: #5cb85c;
   color: #FFF;
   border: none; }
+  .btn-success[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-success[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-success {
   border: solid 1px #5cb85c; }
@@ -674,6 +698,13 @@ textarea.form-control {
   background-color: #d9534f;
   color: #FFF;
   border: none; }
+  .btn-danger[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-danger[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-danger {
   border: solid 1px #d9534f; }
@@ -714,6 +745,13 @@ textarea.form-control {
   background-color: #ffc107;
   color: #FFF;
   border: none; }
+  .btn-warning[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-warning[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-warning {
   border: solid 1px #ffc107; }
@@ -754,6 +792,13 @@ textarea.form-control {
   background-color: #408c99;
   color: #FFF;
   border: none; }
+  .btn-info[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-info[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-info {
   border: solid 1px #408c99; }
@@ -794,6 +839,13 @@ textarea.form-control {
   background-color: #f8f9fa;
   color: #414C63;
   border: none; }
+  .btn-light[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-light[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-light {
   border: solid 1px #f8f9fa; }
@@ -834,6 +886,13 @@ textarea.form-control {
   background-color: #414C63;
   color: #FFF;
   border: none; }
+  .btn-dark[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-dark[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-dark {
   border: solid 1px #414C63; }
@@ -874,6 +933,13 @@ textarea.form-control {
   background-color: #FFF;
   color: #414C63;
   border: none; }
+  .btn-default[readonly] {
+    background-color: #EAEEEC;
+    color: #414C63; }
+  .btn-default[disabled] {
+    background-color: #EAEEEC;
+    color: #414C63;
+    cursor: no-drop; }
 
 .border-default {
   border: solid 1px #FFF; }
@@ -903,4 +969,3 @@ textarea.form-control {
   bottom: 0px;
   z-index: 100; }
 
-/*# sourceMappingURL=core.css.map */
